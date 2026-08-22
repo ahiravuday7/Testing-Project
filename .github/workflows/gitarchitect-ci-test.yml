@@ -1,0 +1,21 @@
+name: GitArchitect CI Test
+
+on:
+  workflow_dispatch:
+  push:
+    branches:
+      - main
+      - master
+
+jobs:
+  failing-test:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Simulate CI failure
+        run: |
+          echo "Running GitArchitect CI debugger test"
+          echo "Intentional failure for demo"
+          exit 1

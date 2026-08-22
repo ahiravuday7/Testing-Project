@@ -1,0 +1,30 @@
+<main class="dashboard-shell">
+  <nav class="topbar" aria-label="Main navigation">
+    <div>
+      <span class="brand-mark" aria-hidden="true">T</span>
+      <strong>Testing Project</strong>
+    </div>
+    <button type="button" (click)="logout()">Log out</button>
+  </nav>
+
+  <section class="dashboard-hero">
+    <p>Authenticated area</p>
+    <h1>Welcome back, {{ user()?.name }}</h1>
+    <span>Signed in as {{ user()?.email }}</span>
+  </section>
+
+  <section class="summary-grid" aria-label="Account summary">
+    <article>
+      <p>Session status</p>
+      <strong>Active</strong>
+    </article>
+    <article>
+      <p>Signed in</p>
+      <strong>{{ user()?.signedInAt | date: 'medium' }}</strong>
+    </article>
+    <article>
+      <p>Access</p>
+      <strong>Protected route</strong>
+    </article>
+  </section>
+</main>
